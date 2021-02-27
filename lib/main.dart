@@ -10,8 +10,18 @@ class DateChat extends StatelessWidget {
     return MaterialApp(
       title: 'Date Chat',
       debugShowCheckedModeBanner: false,
-      home: Center(
-        child: Text('Hello World!'),
+      theme: ThemeData(
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+        appBarTheme: AppBarTheme(),
+        primaryColor: Color(0xFF4478EE),
+        backgroundColor: Color(0xFF1A1C28),
+
+
+      ),
+      home: Scaffold(
+        body: Center(
+          child: Text('Hello World!'),
+        ),
       ),
     );
   }
