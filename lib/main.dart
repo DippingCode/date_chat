@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+
+
+import './screens/splash.dart';
 
 void main() {
   runApp(DateChat());
@@ -12,17 +16,22 @@ class DateChat extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
         visualDensity: VisualDensity.adaptivePlatformDensity,
-        appBarTheme: AppBarTheme(),
+        appBarTheme: AppBarTheme(
+          elevation: 0,
+          brightness: Brightness.dark,
+        ),
         primaryColor: Color(0xFF4478EE),
         backgroundColor: Color(0xFF1A1C28),
 
-
-      ),
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
+        textTheme: TextTheme(
+          headline1: GoogleFonts.roboto(
+            fontSize: 64,
+            color: Color(0xFFf6f6f6),
+            fontWeight: FontWeight.w900,
+          ),
         ),
       ),
+      home: SplashScreen(),
     );
   }
 }
