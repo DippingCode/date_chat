@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import './login.dart';
+import './recovery.dart';
 
 class IntroScreen extends StatelessWidget {
   @override
@@ -98,7 +99,12 @@ class IntroScreen extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: TextButton(
                     child: Text( 'Recuperar a minha conta'),
-                    onPressed: () => {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => RecoveryScreen(),
+                      ),
+                    ),
                   ),
                 ),
               ),
