@@ -45,6 +45,7 @@ class DateChat extends StatelessWidget {
         inputDecorationTheme: InputDecorationTheme(
           filled: true,
           fillColor: Color(0x48070C13),
+          counterStyle: TextStyle(color: Colors.transparent),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(8),
             borderSide: BorderSide(
