@@ -1,7 +1,9 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import './login.dart';
 import './recovery.dart';
+import './readme.dart';
 
 class IntroScreen extends StatelessWidget {
   @override
@@ -71,6 +73,16 @@ class IntroScreen extends StatelessWidget {
                       TextSpan(
                         text: 'Condições gerais de utilização',
                         style: TextStyle(fontWeight: FontWeight.bold),
+                        recognizer: new TapGestureRecognizer()..onTap = 
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (_) => ReadmeScreen(
+                            title: 'Condições gerais de utilização.',
+                            content: 'É necessário que você informe o mesmo e-mail que já utilizou, para que possamos enviar um link de recuperação de conta.',
+                          ),
+                        ),
+                        ),
                       ),
                       TextSpan(
                         text: ', a nossa ',
@@ -78,6 +90,16 @@ class IntroScreen extends StatelessWidget {
                       TextSpan(
                         text: 'Política de privacidade ',
                         style: TextStyle(fontWeight: FontWeight.bold),
+                        recognizer: new TapGestureRecognizer()..onTap = 
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (_) => ReadmeScreen(
+                            title: 'Política de privacidade.',
+                            content: 'É necessário que você informe o mesmo e-mail que já utilizou, para que possamos enviar um link de recuperação de conta.',
+                          ),
+                        ),
+                        ),
                       ),
                       TextSpan(
                         text: 'e a nossa ',
@@ -85,6 +107,16 @@ class IntroScreen extends StatelessWidget {
                       TextSpan(
                         text: 'Carta de cookies.',
                         style: TextStyle(fontWeight: FontWeight.bold),
+                        recognizer: new TapGestureRecognizer()..onTap = 
+                        () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                          builder: (_) => ReadmeScreen(
+                            title: 'Carta de cookies.',
+                            content: 'É necessário que você informe o mesmo e-mail que já utilizou, para que possamos enviar um link de recuperação de conta.',
+                          ),
+                        ),
+                        ),
                       ),
                     ],
                   ),
