@@ -22,6 +22,8 @@ class DateChat extends StatelessWidget {
         ),
         primaryColor: Color(0xFF4478EE),
         backgroundColor: Color(0xFF1A1C28),
+        scaffoldBackgroundColor: Color(0xFFf6f6f6),
+        dividerColor: Color(0x30c4c4c4),
 
         buttonTheme: ButtonThemeData(
           height: 51,
@@ -85,6 +87,20 @@ class DateChat extends StatelessWidget {
             fontSize: 32,
             color: Color(0xFFf6f6f6),
             fontWeight: FontWeight.bold,
+            letterSpacing: 0,
+          ),
+
+          headline5:GoogleFonts.roboto(
+            fontSize: 18,
+            color: Color(0xFFf6f6f6),
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0,
+          ),
+
+          headline6:GoogleFonts.roboto(
+            fontSize: 18,
+            color: Color(0xFF1A1C28),
+            fontWeight: FontWeight.w600,
             letterSpacing: 0,
           ),
 

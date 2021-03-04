@@ -3,6 +3,7 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 
 
 import './intro.dart';
+import './home.dart';
 
 class LoginScreen extends StatelessWidget {
   @override
@@ -79,7 +80,12 @@ class LoginScreen extends StatelessWidget {
                 child: SizedBox(
                   width: MediaQuery.of(context).size.width,
                   child: RaisedButton(
-                    onPressed: () => {},
+                    onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (_) => HomeScreen(),
+                      ),
+                    ),
                     child: Text(
                       'Continuar',
                       style: Theme.of(context).textTheme.button,
