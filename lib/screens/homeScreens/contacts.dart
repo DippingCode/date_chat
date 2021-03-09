@@ -2,9 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+
+import 'chat.dart';
+
 class ContactsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
+    _handlerScreen(String userName) => Navigator.push(
+    context,
+    MaterialPageRoute(
+      builder: (_) => ChatScreen(userName),
+    ),
+  );
+
+
     _contact({
       String user,
       String thumb,
@@ -15,7 +27,7 @@ class ContactsScreen extends StatelessWidget {
             borderRadius: BorderRadius.circular(16),
           ),
           child: InkWell(
-            onTap: () => {},
+            onTap: () => _handlerScreen(user),
             child: Container(
               width: 84,
               height: 114,
@@ -65,96 +77,97 @@ class ContactsScreen extends StatelessWidget {
         );
 
     _message({
-      String thumb, 
+      String thumb,
       String user,
       String age,
       String lastMessage,
       String date,
       IconData icon,
       bool isLast = false,
-    }) => Dismissible(
-      key: ValueKey(user),
-      background: Container(),
-      secondaryBackground: Container(
-        color: Colors.red,
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.end,
-          children: [
-            Text(
-              'Remover Conversa', 
-              style: Theme.of(context).textTheme.overline,
-            ),
-            SizedBox(width: 5),
-            Icon(
-              FeatherIcons.trash,
-              color: Color(0xFFf6f6f6),
-            ),
-          ],
-        ),
-      ),
-      child: Container(
-        decoration: BoxDecoration(
-          border:  isLast
-          ? null
-          : Border(
-            bottom: BorderSide(
-              color: Theme.of(context).dividerColor, 
-            ),
-          ),
-        ),
-        child: ListTile(
-          onTap: () => {},
-          leading: CircleAvatar(
-            backgroundImage: AssetImage(thumb),
-          ),
-          title: Container(
+    }) =>
+        Dismissible(
+          key: ValueKey(user),
+          background: Container(),
+          secondaryBackground: Container(
+            color: Colors.red,
             child: Row(
+              mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 Text(
-                  '$user, $age',
-                  style: GoogleFonts.roboto(
-                    fontSize: 16,
-                    color: Theme.of(context).backgroundColor,
-                    fontWeight: FontWeight.w600,
-                  ),
+                  'Remover Conversa',
+                  style: Theme.of(context).textTheme.overline,
                 ),
-                Spacer(),
-                Text(
-                  date,
-                  style: GoogleFonts.roboto(
-                    fontSize: 12,
-                    color: Colors.grey,
-                  ),
-                ),
-              ],
-            ),
-          ),
-          subtitle: Container(
-            child: Row(
-              children: [
+                SizedBox(width: 5),
                 Icon(
-                  icon,
-                  color: Colors.grey,
-                  size: 16,
-                ),
-                SizedBox(width: 8),
-                Text(
-                  lastMessage,
-                  style: GoogleFonts.roboto(
-                    fontSize: 14,
-                    color: Colors.grey,
-                  ),
+                  FeatherIcons.trash,
+                  color: Color(0xFFf6f6f6),
                 ),
               ],
             ),
           ),
-          trailing: Icon(
-            FeatherIcons.chevronRight,
-            color: Colors.grey,
+          child: Container(
+            decoration: BoxDecoration(
+              border: isLast
+                  ? null
+                  : Border(
+                      bottom: BorderSide(
+                        color: Theme.of(context).dividerColor,
+                      ),
+                    ),
+            ),
+            child: ListTile(
+              onTap: () => _handlerScreen(user),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage(thumb),
+              ),
+              title: Container(
+                child: Row(
+                  children: [
+                    Text(
+                      '$user, $age',
+                      style: GoogleFonts.roboto(
+                        fontSize: 16,
+                        color: Theme.of(context).backgroundColor,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Spacer(),
+                    Text(
+                      date,
+                      style: GoogleFonts.roboto(
+                        fontSize: 12,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              subtitle: Container(
+                child: Row(
+                  children: [
+                    Icon(
+                      icon,
+                      color: Colors.grey,
+                      size: 16,
+                    ),
+                    SizedBox(width: 8),
+                    Text(
+                      lastMessage,
+                      style: GoogleFonts.roboto(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              trailing: Icon(
+                FeatherIcons.chevronRight,
+                color: Colors.grey,
+              ),
+            ),
           ),
-        ),
-      ),
-    );
+        );
 
     return SingleChildScrollView(
       child: Column(
@@ -169,7 +182,6 @@ class ContactsScreen extends StatelessWidget {
             ),
           ),
           _carousel(),
-
           Container(
             margin: EdgeInsets.symmetric(
               horizontal: 16,
@@ -180,9 +192,8 @@ class ContactsScreen extends StatelessWidget {
               style: Theme.of(context).textTheme.subtitle1,
             ),
           ),
-
           _message(
-            thumb: 'foto01.jpeg', 
+            thumb: 'foto01.jpeg',
             user: 'Rebeca',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -190,7 +201,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto02.jpeg', 
+            thumb: 'foto02.jpeg',
             user: 'Júlia',
             age: '24',
             lastMessage: 'Olá tudo bem com você?',
@@ -198,7 +209,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowDownRight,
           ),
           _message(
-            thumb: 'foto03.jpeg', 
+            thumb: 'foto03.jpeg',
             user: 'Beatriz',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -206,7 +217,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto04.jpeg', 
+            thumb: 'foto04.jpeg',
             user: 'Rosa',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -214,7 +225,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto05.jpeg', 
+            thumb: 'foto05.jpeg',
             user: 'Ana',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -222,7 +233,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto06.jpeg', 
+            thumb: 'foto06.jpeg',
             user: 'Tereza',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -230,7 +241,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto07.jpeg', 
+            thumb: 'foto07.jpeg',
             user: 'Mônica',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -238,7 +249,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto08.jpeg', 
+            thumb: 'foto08.jpeg',
             user: 'Juliana',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
@@ -246,7 +257,7 @@ class ContactsScreen extends StatelessWidget {
             icon: FeatherIcons.arrowUpLeft,
           ),
           _message(
-            thumb: 'foto09.jpeg', 
+            thumb: 'foto09.jpeg',
             user: 'Izabel',
             age: '32',
             lastMessage: 'Olá tudo bem com você?',
