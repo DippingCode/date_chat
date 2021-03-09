@@ -104,6 +104,13 @@ class DateChat extends StatelessWidget {
             letterSpacing: 0,
           ),
 
+          subtitle1: GoogleFonts.roboto(
+            fontSize: 16,
+            color: Color(0xFFc4c4c4),
+            fontWeight: FontWeight.w600,
+            letterSpacing: 0,
+          ),
+
           button: GoogleFonts.roboto(
             fontSize: 16,
             color: Color(0xFFf6f6f6),
@@ -117,6 +124,14 @@ class DateChat extends StatelessWidget {
             letterSpacing: 0,
             height: 1.5,
           ), 
+
+          overline: GoogleFonts.roboto(
+            fontSize: 14,
+            color: Color(0xFFf6f6f6),
+            fontWeight: FontWeight.bold,
+            letterSpacing: 0,
+            height: 1.5,
+          ),
 
           bodyText1: GoogleFonts.roboto(
             fontSize: 16,
