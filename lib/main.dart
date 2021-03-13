@@ -19,11 +19,15 @@ class DateChat extends StatelessWidget {
         appBarTheme: AppBarTheme(
           elevation: 0,
           brightness: Brightness.dark,
+          iconTheme: IconThemeData(
+            color: Color(0xFF4478EE),
+          ),
         ),
         primaryColor: Color(0xFF4478EE),
         backgroundColor: Color(0xFF1A1C28),
         scaffoldBackgroundColor: Color(0xFFf6f6f6),
         dividerColor: Color(0x30c4c4c4),
+        
 
         buttonTheme: ButtonThemeData(
           height: 51,

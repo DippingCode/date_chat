@@ -2,20 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-
-import 'chat.dart';
+import './chat.dart';
 
 class ContactsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-
-    _handlerScreen(String userName) => Navigator.push(
-    context,
-    MaterialPageRoute(
-      builder: (_) => ChatScreen(userName),
-    ),
-  );
-
+    _handlerScreen( String userName) => Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder:  (_) => ChatScreen(userName),
+      ),
+    );
 
     _contact({
       String user,

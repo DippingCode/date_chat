@@ -71,6 +71,7 @@ class LoginScreen extends StatelessWidget {
                 padding: EdgeInsets.fromLTRB(0, 0, 0, 48),
                 child: Text(
                   'Nós precisamos dele apenas para verificar a sua conta e nada mais. Seu e-mail nunca aparecerá no seu perfil.',
+                  textAlign: TextAlign.center,
                   style: Theme.of(context).textTheme.caption,
                 ),
               ),

@@ -3,10 +3,18 @@ import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../intro.dart';
+import './profileForm.dart';
 
 class ProfileScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    _handlerScreen(String form) => Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder:  (_) => ProfileFormScreen(form),
+      ),
+    );
+
     _item({
       String title,
       FontWeight weight = FontWeight.w400,
@@ -144,22 +152,22 @@ class ProfileScreen extends StatelessWidget {
                   _item(
                     title: 'Gênero',
                     subtitle: 'Masculino',
-                    onTap: () => {}
+                    onTap: () => _handlerScreen('Gênero'),
                   ),
                   _item(
                     title: 'Idade',
                     subtitle: '25',
-                    onTap: () => {}
+                    onTap: () => _handlerScreen('Idade'),
                   ),
                   _item(
                     title: 'Altura',
                     subtitle: '1.73',
-                    onTap: () => {}
+                    onTap: () => _handlerScreen('Altura'),
                   ),
                   _item(
                     title: 'Profissão',
                     subtitle: 'software architect',
-                    onTap: () => {}
+                    onTap: () => _handlerScreen('Profissão'),
                   ),
                   _item(
                     title: 'Interesses Pessoais',
@@ -168,22 +176,22 @@ class ProfileScreen extends StatelessWidget {
                   _item(
                     title: 'Quero conhecer',
                     subtitle: 'Mulheres',
-                    onTap: () => {},
+                    onTap: () => _handlerScreen('Conhecer'),
                   ),
                   _item(
                     title: 'Em relação ao cigarro',
                     subtitle: 'Não fumante',
-                    onTap: () => {},
+                    onTap: () => _handlerScreen('Cigarro'),
                   ),
                   _item(
                     title: 'Bebidas alcóolicas',
                     subtitle: 'Não informado',
-                    onTap: () => {},
+                    onTap: () => _handlerScreen('Bebidas'),
                   ),
                   _item(
                     title: 'Esporte',
                     subtitle: 'Não informado',
-                    onTap: () => {},
+                    onTap: () => _handlerScreen('Esporte'),
                   ),
                   _item(
                     title: 'Dados da Conta',
@@ -192,7 +200,7 @@ class ProfileScreen extends StatelessWidget {
                   _item(
                     title: 'E-mail',
                     subtitle: 'pessoa@email.com',
-                    onTap: () => {},
+                    onTap: () => _handlerScreen('E-mail'),
                   ),
 
                   Container(
